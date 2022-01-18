@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
+        marginBottom:15,
     },
     messages:{
         fontSize: 15,
@@ -20,6 +21,12 @@ export const styles = StyleSheet.create({
     },
     userName:{
         color: COLORS.WHITE,
+        fontSize: 15,
+        fontFamily: FONTS.REGULAR,
+        marginLeft: 16,
+    },
+    dataTime:{
+        color: COLORS.GRAY_PRIMARY,
         fontSize: 15,
         fontFamily: FONTS.REGULAR,
         marginLeft: 16,

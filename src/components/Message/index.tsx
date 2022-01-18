@@ -28,10 +28,6 @@ export function Message({data}: Props){
        style={styles.container}
        >
 
-           <Text style={styles.messages}>
-               {data.text}
-            </Text>
-
            <View style={styles.footer}>
                <UserPhoto sizes="SMALL"
                imageUri={data.user.avatarUrl}
@@ -40,8 +36,13 @@ export function Message({data}: Props){
                <Text style={styles.userName}>
                    {data.user.name}
                </Text>
+               <Text style={styles.dataTime}>
+                   {data.create_at}
+               </Text>
            </View>
-
+           <Text style={styles.messages}>
+               {data.text}
+            </Text>
        </MotiView>
        )
    }
