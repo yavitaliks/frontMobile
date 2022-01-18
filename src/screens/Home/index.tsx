@@ -1,5 +1,7 @@
 import React from "react";
 import {View, Text} from "react-native";
+import { useAuth } from "../../hooks/auth";
+
 import { styles } from "./styles";
 
 import { Header } from "../../components/Header";
@@ -8,11 +10,16 @@ import { SingInBox } from "../../components/SingInBox";
 import { SendMessage } from "../../components/SendMessageForm";
 
 export function Home(){
+
+    const {user } = useAuth()
+
     return(
         <View style={styles.container}>
             <Header />
             <MessageList/>
-            <SendMessage/>
+
+            {user ? <SendMessage/> : <SingInBox/>}
+            
             
         </View>
     )

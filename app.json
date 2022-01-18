@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "frontMobile",
-    "slug": "frontMobile",
+    "name": "frontmobile",
+    "slug": "frontmobile",
     "version": "1.0.0",
+    "scheme": "frontmobile",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
