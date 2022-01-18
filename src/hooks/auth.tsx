@@ -11,7 +11,7 @@ const TOKEN_STORAGE = '@nlwheat:token';
 
 type User = {
     id: string
-    avatarUrl: string
+    avatar_url: string
     name: string
     login: string
 }
@@ -73,7 +73,9 @@ try{
     }
 
     async function singOut(){
-        
+        setUser(null);
+        await AsyncStorage.removeItem(USER_STORAGE);
+        await AsyncStorage.removeItem(TOKEN_STORAGE)
     }
 
     useEffect(() =>{
