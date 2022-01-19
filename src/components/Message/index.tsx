@@ -10,7 +10,7 @@ export type MessagemProps ={
     text: string,
     create_at: string,
     user: {
-        avatarUrl: string,
+        avatar_url: string,
         name: string,
     }
 }
@@ -30,7 +30,7 @@ export function Message({data}: Props){
 
            <View style={styles.footer}>
                <UserPhoto sizes="SMALL"
-               imageUri={data.user.avatarUrl}
+               imageUri={data.user.avatar_url}
                />
 
                <Text style={styles.userName}>
