@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {ScrollView, FlatList} from 'react-native'
-import { io }  from 'socket.io-client'
+import { io } from 'socket.io-client'
 import { styles } from './styles'
 
 import { Message, MessagemProps } from "../Message"
@@ -15,8 +15,7 @@ socket.on('new_message', (newMessage) => {
 });
  
 export function MessageList(){
-
-    const [currentMessage, setCurrentMessage] = useState<MessagemProps[]>([])
+const [currentMessage, setCurrentMessage] = useState<MessagemProps[]>([])
 
 useEffect(()=>{
     async function CurrentMessage() {
@@ -27,7 +26,13 @@ useEffect(()=>{
 }, [])
 
 useEffect(()=> {
-
+    const timer = setInterval(() => {
+        if(messagesQueue.length > 0){
+            setCurrentMessage(prevState =>[messagesQueue[0], prevState[1], prevState[2],prevState[3], prevState[4], prevState[5], prevState[6], prevState[7], prevState[7],prevState[9]]);
+            messagesQueue.shift();
+        }
+    }, 3000);
+    return() => clearInterval(timer)
 }, [])
 
    return(
